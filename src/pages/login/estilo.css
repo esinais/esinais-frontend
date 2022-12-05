@@ -1,0 +1,12 @@
+.texto-titulo{
+    margin-top: 20%;
+    margin-bottom: 15%;
+    font-weight: bold;
+    font-size: 20px; 
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;500&family=Fredoka+One&family=Montserrat:wght@700&display=swap');
+}
+.texto-titulo-tradutor{
+    font-weight: bold;
+    font-size: 20px; 
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;500&family=Fredoka+One&family=Montserrat:wght@700&display=swap');
+}

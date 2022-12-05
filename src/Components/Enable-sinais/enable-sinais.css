@@ -1,0 +1,209 @@
+.enableSinais{
+    background: #f3f4f6;
+    grid-area: main;
+    overflow-y: auto;
+}
+
+.enableSinais__container{
+    padding: 20px 35px;
+    
+}
+.enableSinais__title{
+    display: flex;
+    align-items: center;
+}
+.enableSinais__title > img {
+    max-height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+.enableSinais__greeting_h1 {
+    font-size: 24px;
+    color: #2e4a66;
+    margin-bottom: 5px;
+}
+.enableSinais__greeting_p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #a5aaad;
+}
+.enableSinais__cards{
+    display: grid;
+    grid-template-columns:repeat(1, 1fr);
+    gap: 30px;
+    margin: 20px 0;
+}
+.cardEnable{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    height: 70px !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+    background-color: #FFF !important;
+
+    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #FFF !important;
+}
+.cardBuscaEnable{
+    display: flex !important;
+    /*flex-direction: column !important;*/
+    flex-direction: row;
+    align-items: center;
+    height: 70px !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+    background-color: #FFF !important;
+    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #FFF !important;
+
+}
+.cardBuscaSinalEnable{
+    display: flex !important;
+    /*flex-direction: column !important;*/
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    height: 400px !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+    background-color: #FFF !important;
+    overflow-y: auto;
+    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #FFF !important;
+    
+}
+.tituloInfoEnable{
+
+    margin-left: 400px;
+    margin-right: 400px;
+    text-align: center;
+    
+}
+.text-tituloInfoEnable-p{
+    color: #a5aaad;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.div-img-sinal-asso-Enable{
+    margin-left: 40px;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+.div-img-sinal-button-Enable{
+    margin-left: 40px;
+    margin-right: 40px;
+    align-items: center;
+    text-align: center;
+}
+.div-geral-Enable{
+    border: #000;
+}
+.buttonAprovar{
+    margin-top: 20px;
+    background: #10c500;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 700;
+    width: 80px;
+    height: 35px;
+    border-radius: 1rem;
+    border: none;
+    text-decoration: none;
+}
+.buttonReprovar{
+    margin-top: 20px;
+    margin-left: 10px;  
+    background: #f70707;
+    color: #ffffff;
+    font-weight: 700;
+    width: 80px;
+    height: 35px;
+    border-radius: 1rem;
+    border: none;
+}
+.buttonEditarAprovar{
+    margin-top: 20px;
+    margin-left: 10px;
+    background: #a8a60a;
+    color: #ffffff;
+    font-weight: 700;
+    width: 80px;
+    height: 35px;
+    border-radius: 1rem;
+    border: none;
+}
+.cardBuscaSinal2{
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.cardS_interno1{
+    display: flex;
+    align-items: center;
+}
+.cardS_interno2{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 15px;
+    width: 50%;
+    
+}
+.cardS_interno3{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    align-items: flex-start;
+    font-size: 15px;
+}
+.titulo_interno_det_sinais{
+    text-align: center;
+}
+.regiao_bandeira_det_sinais{
+    margin-left: 20px;
+}
+.alinhamento{
+    width: 50%;
+    margin: 0 auto;
+}
+.inputS{
+    
+    padding: 0.9rem 1.2rem;
+    width: 300px;
+    border: 1px solid #67fc99;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.selectS{
+    width: 350px;
+    margin: 0.8rem 1;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #67fc99;
+}
+.text-primaryy-p{
+    color: #a5aaad;
+    font-size: 14px;
+    font-weight: 700;
+
+}
+
+
+@media only screen and (max-width: 855px){
+    .enableSinais__cards{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+    .cardBusca{
+        height: 500px;
+    }
+    .cardBuscaSinal{
+        height: 500px;
+    }
+    
+}

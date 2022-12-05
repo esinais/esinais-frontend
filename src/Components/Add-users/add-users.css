@@ -1,0 +1,132 @@
+.addUsers{
+    background: #f3f4f6;
+    grid-area: main;
+    overflow-y: auto;
+}
+
+.addUsers__container{
+    padding: 20px 35px;
+}
+.addUsers__title{
+    display: flex;
+    align-items: center;
+}
+.addUsers__title > img {
+    max-height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+.addUsers__cards{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    gap: 30px;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: #FFF;
+
+    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #FFF;
+}
+.addUsers_card{
+    width: 100%;
+    position: relative;
+    padding: 20px;
+}
+.addUsers_card_inner {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    
+}
+.cardAddUser{
+    display: flex !important;
+    /*flex-direction: column !important;*/
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    height: 350px !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+    background-color: #FFF !important;
+    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #FFF !important;
+    
+}
+.inputUs{
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #67fc99;
+    border-radius: 10px;
+}
+.selectUs{
+    width: 100%;
+    margin: 0.8rem 1;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #67fc99;
+}
+.alinharUs{
+    margin-right: 100px;
+}
+.buttonGravarUs {
+    background: #ff1c1c;
+    color: #ffffff;
+    width: 100px;
+    height: 30px;
+    border-radius: 1rem;
+    border: none;
+}
+.buttonCadastrarUs{
+    margin-top: 20px;
+    background: #10c500;
+    color: #ffffff;
+    font-weight: 700;
+    width: 100px;
+    height: 35px;
+    border-radius: 1rem;
+    border: none;
+}
+.buttonLimparUs{
+    margin-top: 20px;
+    margin-left: 10px;
+    background: #c2c500;
+    color: #ffffff;
+    font-weight: 700;
+    width: 100px;
+    height: 35px;
+    border-radius: 1rem;
+    border: none;
+}
+.text-primaryyUs-p{
+    color: #a5aaad;
+    font-size: 16px;
+    font-weight: 700;
+
+}
+
+
+
+@media only screen and (max-width: 855px){
+    .addUsers__cardsM{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+    .cardAddUser{
+        height: 500px;
+    }
+    .charts{
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+        justify-content: center;
+
+    }
+    .charts__right__cardsM{
+        grid-template-columns: 1fr;
+        align-items: center;
+        margin-top: 30px;
+    }
+}

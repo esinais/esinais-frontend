@@ -1,0 +1,201 @@
+.searchUsuarios{
+    background: #f3f4f6;
+    grid-area: main;
+    overflow-y: auto;
+}
+
+.searchUsuarios__container{
+    padding: 20px 35px;
+    
+}
+.searchUsuarios__title{
+    display: flex;
+    align-items: center;
+}
+.searchUsuarios__title > img {
+    max-height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+.searchUsuarios__greeting_h1 {
+    font-size: 24px;
+    color: #2e4a66;
+    margin-bottom: 5px;
+}
+.searchUsuarios__greeting_p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #a5aaad;
+}
+.searchUsuarios__cards{
+    display: grid;
+    grid-template-columns:repeat(1, 1fr);
+    gap: 30px;
+    margin: 20px 0;
+}
+.cardU{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    height: 70px !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+    background-color: #FFF !important;
+
+    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #FFF !important;
+}
+.cardBuscaU{
+    display: flex !important;
+    /*flex-direction: column !important;*/
+    flex-direction: row;
+    align-items: center;
+    height: 70px !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+    background-color: #FFF !important;
+    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #FFF !important;
+
+}
+.cardBuscaUsuario{
+    display: flex !important;
+    /*flex-direction: column !important;*/
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    height: 300px !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+    background-color: #FFF !important;
+    overflow-y: auto;
+    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #FFF !important;
+    
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+.tituloInfoU{
+
+    margin-left: 400px;
+    margin-right: 400px;
+    text-align: center;
+    
+}
+.text-tituloInfoU-p{
+    color: #a5aaad;
+    font-size: 22px;
+    font-weight: 700;
+
+}
+.div-img-usuario-asso{
+    margin-left: 80px;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+.div-img-usuario-button{
+    margin-left: 100px;
+    align-items: center;
+    text-align: center;
+}
+.div-geralU{
+    border: #000;
+}
+.buttonEditarU{
+    margin-top: 20px;
+    background: #10c500;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 700;
+    width: 100px;
+    height: 35px;
+    border-radius: 1rem;
+    border: none;
+    text-decoration: none;
+}
+.buttonExcluirU{
+    margin-top: 20px;
+    margin-left: 10px;
+    background: #f70707;
+    color: #ffffff;
+    font-weight: 700;
+    width: 100px;
+    height: 35px;
+    border-radius: 1rem;
+    border: none;
+}
+.cardBuscaUsuario2{
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.cardU_interno1{
+    display: flex;
+    align-items: center;
+}
+.cardU_interno2{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 15px;
+    width: 50%;
+    
+}
+.cardU_interno3{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    align-items: flex-start;
+    font-size: 15px;
+}
+.titulo_interno_det_usuarios{
+    text-align: center;
+}
+.regiao_bandeira_det_usuarios{
+    margin-left: 20px;
+}
+.alinhamentoU{
+    width: 50%;
+    margin: 0 auto;
+}
+.inputU{
+    
+    padding: 0.9rem 1.2rem;
+    width: 300px;
+    border: 1px solid #67fc99;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.selectU{
+    width: 350px;
+    margin: 0.8rem 1;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #67fc99;
+}
+.text-primaryyU-p{
+    color: #a5aaad;
+    font-size: 14px;
+    font-weight: 700;
+
+}
+
+
+@media only screen and (max-width: 855px){
+    .searchUsuarios__cards{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+    .cardBuscaU{
+        height: 500px;
+    }
+    .cardBuscaUsuario{
+        height: 500px;
+    }
+    
+}
