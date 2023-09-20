@@ -111,12 +111,12 @@ export const CadastrarSinal = () => {
                 </div>
                 <div className="gravar__video__input">
                     {playing ? (
-                        <button className='gravar__video__button' onClick={stopVideo}>Parar</button>
+                        <button className='gravar__video__button__Gravando fa fa-stop' onClick={stopVideo}>Gravando</button>
                     ) : (
-                        <button className='gravar__video__button' onClick={startVideo}>Iniciar</button>
+                        <button className='gravar__video__button fa fa-video-camera' onClick={startVideo}></button>
                         
                     )}
-                    <button className='gravar__video__button__Fechar' onClick={() => setButtonPopups(false)}>Fechar</button>
+                    <button className='gravar__video__button__Fechar fa fa-window-close' onClick={() => setButtonPopups(false)}></button>
 
                     {/*<video id="recorded-video" controls className="app__videoFeedRecorder">
                 //Your browser doesn't support the video tag
@@ -198,15 +198,18 @@ export const CadastrarSinal = () => {
                 tempoFinal = "00:00:" + tempo_final[0];
             }
         }
-        console.log("entreissss");
-        console.log("estou recebendo: " + sinal.nomeSinal);
+        
+        if(sinal.regiao === ""){
+            sinal.regiao = "nacional";
+        }   
+        //console.log(sinal.regiao);
         //console.log("Olha como ficou o formato dos cortes: " + tempoInicial + " tempo final: "+tempoFinal)
         const dados = new FormData();
-        
+        let classi = "nao-classificado";
         dados.append('nomeSinal', (sinal.nomeSinal).toLocaleLowerCase());
         dados.append('enderecoSinal', enderecoSinal);
         dados.append('enderecoImgAssociativa', endereco_Img_Associativa);
-        dados.append('classificacaoGramatical', (sinal.classificacaoGramatical).toLocaleLowerCase());
+        dados.append('classificacaoGramatical', (classi).toLocaleLowerCase());
         dados.append('regiao', (sinal.regiao).toLocaleLowerCase());
         dados.append('statusSinal', (sinal.statusSinal).toLocaleLowerCase());
         dados.append('situacao', (sinal.situacao).toLocaleLowerCase());
@@ -255,7 +258,7 @@ export const CadastrarSinal = () => {
             situacao: yup.string("Error*: Necessário preencher o campo situação").required("Error: Necessário preencher o campo situação"),
             statusSinal: yup.string("Error: Necessário preencher o campo status Sinal").required("Error: Necessário preencher o campo status Sinal"),
             regiao: yup.string("Error: Necessário preencher o campo região").required("Error: Necessário preencher o campo região"),
-            classificacaoGramatical: yup.string("Error: Necessário preencher o campo Classificação gramatical").required("Error: Necessário preencher o campo Classificação gramatical"),
+            //classificacaoGramatical: yup.string("Error: Necessário preencher o campo Classificação gramatical").required("Error: Necessário preencher o campo Classificação gramatical"),
             //enderecoImgAssociativa: yup.string("Error: Necessário preencher o campo Imagem associativa").required("Error: Necessário preencher o campo Imagem associativa"),
             //enderecoSinal:  yup.object().shape({file: yup.mixed().required('File is required')}),
             nomeSinal: yup.string("Error*: Necessário preencher o campo Nome do Sinal").required("Error*: Necessário preencher o campo Nome do Sinal")
@@ -267,7 +270,7 @@ export const CadastrarSinal = () => {
                 nomeSinal: sinal.nomeSinal,
                 //enderecoSinal: sinal.enderecoSinal,
                 //enderecoImgAssociativa: sinal.enderecoImgAssociativa,
-                classificacaoGramatical: sinal.classificacaoGramatical,
+                //classificacaoGramatical: sinal.classificacaoGramatical,
                 regiao: sinal.regiao,
                 statusSinal: sinal.statusSinal,
                 situacao: sinal.situacao

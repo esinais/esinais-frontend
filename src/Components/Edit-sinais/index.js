@@ -67,6 +67,7 @@ const EditSinal = ( { editarSinal, deletarSinal, nomeSinal, classificacaoGramati
                                 <option value="numeral">Numeral</option>
                                 <option value="substantivo" >Substantivo</option>
                                 <option value="verbo">Verbo</option>
+                                <option value="nao-classificado">Não classificado</option>
                             </select>
                         </div>
                         <div className='alinharE'>

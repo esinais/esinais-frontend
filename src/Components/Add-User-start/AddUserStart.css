@@ -1,0 +1,112 @@
+.createUser{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.2);
+    z-index: 9999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.createUser-inner{
+    position: relative;
+    padding: 34px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 100%;
+    background-color: white;
+    overflow-y: scroll;
+    
+    
+}
+
+.createUser-inner .close-btn{
+    top: 16px;
+    right: 16px;
+    width: 60px;
+}
+.createUser-inner .send-btn{
+    top: 50px;
+    right: 16px;
+    width: 100px;
+}
+.titulo-createUser{
+    position: absolute;
+    top: 20px;
+    right: 35%;
+}
+.texto-detalhes-createUser{
+    position: absolute;
+    top: 55px;
+    left: 30px;
+    font-weight: bold;
+}
+.texto-detalhes-createUser-center{
+    position: absolute;
+    top: 55px;
+    left: 260px;
+    font-weight: bold;
+}
+.texto-titulo-createUser{
+    font-weight: bold;
+    left: 300px;
+}
+.texto-nomeSinal-createUser{
+    font-weight: bold;
+    
+}
+.texto-detalhesSinalTitulo-createUser{
+    font-weight: bold;
+}
+.texto-detalhesSinal-createUser{
+    text-align: center;
+}
+.overlay2{
+    position:absolute;
+    top:30px;
+    left:1px;
+    margin-bottom: 30px;
+    z-index:1;
+}
+.texto-cor-poup{
+    color: #ff0000;
+}
+.texto-senha-nao-confere{
+    font-weight: bold;
+    font-size: 12px;
+}
+.inputCpf{
+    padding: 15px;
+    width: 80%;
+    border: 1px solid #67fc99;
+    border-radius: 10px;
+}
+.inputNome{
+    padding: 15px;
+    width: 80%;
+    border: 1px solid #67fc99;
+    border-radius: 10px;
+}
+.inputEmail{
+    padding: 15px;
+    width: 80%;
+    border: 1px solid #67fc99;
+    border-radius: 10px;
+}
+.inputSenhaConfirme{
+    padding: 15px;
+    width: 80%;
+    border: 1px solid #f50101;
+    border-radius: 10px;
+}
+.inputUps{
+    padding: 15px;
+    width: 80%;
+    border: 1px solid #67fc99;
+    border-radius: 10px;
+}

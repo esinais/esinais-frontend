@@ -5,25 +5,21 @@ import api from '../../config/configApi';
 import { Context } from "../../Context/AuthContext";
 import Poups from "../../Components/Poups";
 import Home from '../../Components/Home';
+import AddUsers from '../../Components/Add-User-start';
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import Figure from 'react-bootstrap/Figure';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './estilo.css';
 import CardsProjeto from '../../Components/Cards-projeto';
 import CardsRanking from '../../Components/Cards-Ranking';
 import Footer from '../../Components/Footer';
-import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
-import Card from 'react-bootstrap/Card';
-import CardsTradutor from '../../Components/Cards-tradutor';
-import bandeira from './bahia.png';
+
 
 
 export const Login = () => {
@@ -64,6 +60,7 @@ export const Login = () => {
     const [ranking, setRanking] = useState('');
     const [nomeBandeira, setNomeBandeira] = useState('');
     const [contador, setContador] = useState(0);
+    const [cadastrarUsuario, setCadastrarUsuario] = useState(false);
 
 
 
@@ -110,7 +107,7 @@ export const Login = () => {
     }
     
     const contadorPalavras = (valor) => {
-        //console.log("entrei no contador" + valor)
+        //console.log("entrei no contador: ");
         valor.replace(/(\r\n|\n|\r)/g," ").trim(); 
 	    var cont = valor.split(/\s+/g).length - 1; 
 
@@ -195,7 +192,9 @@ export const Login = () => {
         data[sinalEvento].polissemia[index].imgPolissemia = enderecoImgAssoOld;
         setButtonPopups(false);
     }
-    
+    const modalCadastrarUsuario = async e => {
+        setCadastrarUsuario(true);
+    }
 
     const loginSubmit = async e => {
         //este comando evita que a página seja recarregada após o submit
@@ -295,22 +294,22 @@ export const Login = () => {
 
         //fazendo requisição para rota de listar sinais do back-end
         ///sinais/:id_tipo/:paginacao
-        // http://localhost:8080/sinais/id_tipo/valor/paginacao
+        // api.defaults.baseURL/sinais/id_tipo/valor/paginacao
         ///sinais/:id_tipo/:valor/:paginacao
         //console.log("aqui")
         await api.get("/sinais/9/0/1", headers)
             .then((response) => {
                 //console.log(response.data.sinais_encontrados.polissemia[0].nomeSinal)
                 //Apresentar o retorno da API e setar em setData
+               
                 setRanking(response.data.usuarios);
                 
-                //console.log(response.data.usuarios)
 
             }).catch((err) => {
 
                 if (err.response) {
 
-             
+                   
                     setStatus({
                         type: err.response.data.status,
                         message: err.response.data.message
@@ -390,45 +389,6 @@ export const Login = () => {
                 </Navbar>
 
             ))}
-
-            {/*<Navbar bg="light" expand="lg">
-                <Container fluid>
-                    <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Navbar.Collapse id="navbarScroll" style={{ textAlign: "center" }}>
-                        <Nav
-                            className="me-auto my-5 my-lg-0"
-                            style={{ maxHeight: '100px', textAlign: "center" }}
-                            navbarScroll
-                        >
-                            <Nav.Link className="text-center" href="#action1">Home</Nav.Link>
-                            <Nav.Link href="#action2">Link</Nav.Link>
-                            <NavDropdown title="Link" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action5">
-                                    Something else here
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                            <Nav.Link href="#" disabled>
-                                Link
-                            </Nav.Link>
-                        </Nav>
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>*/}
             <div style={{ marginTop: "5%"}} >
                 <Home />
             </div>
@@ -488,7 +448,7 @@ export const Login = () => {
                     {imgAssociativaFlu ? (
                         <Col className="imgAssociativaFlutuante">
                             <span className="imgAssociativaLegenda">
-                                <img src={"http://localhost:8080/files/imgAssociativa/" + imgAssoEvento} alt="Imagem Associativa" width="150px" height="150px" /><br />
+                                <img src={api.defaults.baseURL+"/files/imgAssociativa/" + imgAssoEvento} alt="Imagem Associativa" width="150px" height="150px" /><br />
                                 <p>Imagem Associativa</p>
                             </span>
                         </Col>
@@ -535,7 +495,9 @@ export const Login = () => {
 
                     {data.map((sinais_encontrados, index) => (
                         <span className="container-tradutor">
-                            <img className="mt-3 mb-3" src={"http://localhost:8080/files/sinais/" + sinais_encontrados.sinal} alt="Imagem do sinal" width="150px" height="150px" onClick={() => setButtonPopups(true)} onMouseEnter={() => imgAssociativaEvento(index)} onMouseLeave={limparEvento} value="nada" />
+                            {/*<img className="mt-3 mb-3" src={"http://localhost:8080/files/sinais/" + sinais_encontrados.sinal} alt="Imagem do sinal" width="150px" height="150px" onClick={() => setButtonPopups(true)} onMouseEnter={() => imgAssociativaEvento(index)} onMouseLeave={limparEvento} value="nada" />
+                            */}
+                            <img className="mt-3 mb-3" src={api.defaults.baseURL+"/files/sinais/" + sinais_encontrados.sinal} alt="Imagem do sinal" width="150px" height="150px" onClick={() => setButtonPopups(true)} onMouseEnter={() => imgAssociativaEvento(index)} onMouseLeave={limparEvento} value="nada" />
                             <span className="overlay">{sinais_encontrados.nomeSinal}</span>{"    "}
                         </span>
                     ))}
@@ -560,7 +522,7 @@ export const Login = () => {
                         <Container className="bg-ligth mb-5 tradutor" >
                             {(polissemia) ? (polissemia.map((pol, index) => (
                                 <span className="container-tradutor">
-                                    <img className="container-tradutor-poup mt-3 mb-3" src={"http://localhost:8080/files/sinais/" + pol.enderecoSinalPolissemico}
+                                    <img className="container-tradutor-poup mt-3 mb-3" src={api.defaults.baseURL+"/files/sinais/" + pol.enderecoSinalPolissemico}
                                         onClick={() => trocarPolissemia(pol.enderecoSinalPolissemico, pol.imgPolissemia, index)}
                                         onMouseEnter={() => informacoesDetalhadasSinal(pol.gramatical, pol.regiao, pol.imgPolissemia, pol.nomeSinal)}
                                         onMouseLeave={() => informacoesDetalhadasSinalLimpar(controle)}
@@ -575,7 +537,7 @@ export const Login = () => {
                         <Container className="bg-ligth mb-4 tradutor" >
                             {(sinonimos) ? (sinonimos.map((sin) => (
                                 <span className="container-tradutor">
-                                    <img className="container-tradutor-poup mt-3 mb-3" src={"http://localhost:8080/files/sinais/" + sin.enderecoSinalSinonimo}
+                                    <img className="container-tradutor-poup mt-3 mb-3" src={api.defaults.baseURL+"/files/sinais/" + sin.enderecoSinalSinonimo}
                                         onClick={() => trocarSinonimo(sin.nomeSinal, sin.enderecoSinalSinonimo)}
                                         onMouseEnter={() => informacoesDetalhadasSinal(sin.gramatical, sin.regiao, sin.imgSinonimo, sin.nomeSinal)}
                                         onMouseLeave={() => informacoesDetalhadasSinalLimpar(controle)}
@@ -587,6 +549,19 @@ export const Login = () => {
                     </Poups>
                 </Container>
                 <p className="qtdPalavras">{contador} Palavra(s) traduzidas</p>
+                <div className="text-center">
+                    <p className="texto-titulo-tradutor">Ainda não criou sua conta no e-Sinais?</p>
+                    <Button className="text-center" variant="outline-success"
+                        onClick={() => setCadastrarUsuario(true)}
+                    >Cadastre-se</Button>
+                </div>
+                {(cadastrarUsuario) ? (
+                    <AddUsers 
+                        trigger={cadastrarUsuario} 
+                        setTrigger={setCadastrarUsuario}
+                        
+                    />): ""}
+                
                 <CardsProjeto />
                 <CardsRanking usuarios={ranking} />
                 <Footer />

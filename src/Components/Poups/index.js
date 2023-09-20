@@ -1,5 +1,6 @@
 import React from "react";
 import './Poups.css';
+import api from '../../config/configApi';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -39,7 +40,7 @@ function Popups(props) {
                             <h6 className="texto-detalhesSinalTitulo-poup">Regionalidade:</h6>
                             <span className="container-tradutor">
                                 <img className="container-tradutor-poup"
-                                    src={"http://localhost:8080/files/bandeiras/"+props.bandeira+".png"}
+                                    src={api.defaults.baseURL+"/files/bandeiras/"+props.bandeira+".png"}
                                     width="50px"
                                     height="30px"
 
@@ -50,7 +51,7 @@ function Popups(props) {
                         <Col className="mt-2">
                             {(props.corFontPoup) ? (<h6 className="texto-cor-poup " >Imagem Associativa: </h6>):(<h6 className="texto-detalhesSinalTitulo-poup">Imagem Associativa: </h6>)}
                             <img className="container-tradutor-poup mt-3 mb-3"
-                                src={"http://localhost:8080/files/imgAssociativa/" + props.imgAssociativaPoup} width="50px" height="30px" />
+                                src={api.defaults.baseURL+"/files/imgAssociativa/" + props.imgAssociativaPoup} width="50px" height="30px" />
                         </Col>
                     </Row>
                     <Row className="texto-sinal-popup">
