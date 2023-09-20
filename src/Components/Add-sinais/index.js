@@ -33,7 +33,7 @@ const AddSinais = ( { cadastrarSinal, valueInput, setEnderecoSinal, setEnderecoI
                         <div className='alinhar'>
                             <p className='text-primaryyA-p'>Classificação Gramatical</p>
                             <select className='selectA' onChange={valueInput} name="classificacaoGramatical" id="classificacaoGramatical">
-                            <option value="" selected>Selecione:</option>
+                            <option value="nao-classificado" selected>Selecione:</option>
                                 <option value="adjetivo">Adjetivo</option>
                                 <option value="numeral">Numeral</option>
                                 <option value="substantivo" >Substantivo</option>
@@ -44,7 +44,7 @@ const AddSinais = ( { cadastrarSinal, valueInput, setEnderecoSinal, setEnderecoI
                         <div className='alinhar'>
                             <p className='text-primaryyA-p'>Região</p>
                             <select className='selectA' onChange={valueInput} name="regiao" id="regiao">
-                            <option value="" selected>Selecione:</option>
+                            <option value="">Selecione:</option>
                                 <option value="acre">Acre (AC)</option>
                                 <option value="alagoas" >Alagoas (AL)</option>
                                 <option value="amapá">Amapá (AP)</option>
@@ -72,7 +72,7 @@ const AddSinais = ( { cadastrarSinal, valueInput, setEnderecoSinal, setEnderecoI
                                 <option value="são paulo">São Paulo (SP)</option>
                                 <option value="sergipe">Sergipe (SE)</option>
                                 <option value="tocantins">Tocantins (TO)</option>
-                                <option value="nacional">Nacional (BR)</option>
+                                <option value="nacional" selected>Nacional (BR)</option>
 
                             </select>
                         </div>

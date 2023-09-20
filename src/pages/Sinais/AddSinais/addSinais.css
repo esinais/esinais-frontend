@@ -57,3 +57,13 @@
     border-radius: 1rem;
     border: none;
 }
+.gravar__video__button__Gravando{
+    background: rgb(4, 250, 45);
+    color: #ffff;
+    width: 90px;
+    height: 40px;
+    font-weight: 700;
+    left: 20px;
+    border-radius: 1rem;
+    border: none;
+}

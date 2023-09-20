@@ -23,7 +23,7 @@ function CustomRoute({ isPrivate, ...rest }) {
     //const navigate = useNavigate();
     
     if (isPrivate && !authenticated) {
-        return <Redirect to="/login" />;
+        return <Redirect to="/" />;
     }
     return <Route { ...rest} />
 }
@@ -31,7 +31,7 @@ function CustomRoute({ isPrivate, ...rest }) {
 export default function RoutesAdm() {
     return (
         <Switch>
-            <CustomRoute exact path="/login"  component={Login} />
+            <CustomRoute exact path="/"  component={Login} />
             <CustomRoute exact isPrivate path="/dashboard" component={Dashboard} />
             <CustomRoute exact isPrivate path="/usuarios" component={Usuarios} />
             <CustomRoute exact isPrivate path="/cadastrarUsuario" component={CadastrarUsuario} />

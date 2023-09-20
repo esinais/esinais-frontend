@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import api from '../../config/configApi';
 import Form from 'react-bootstrap/Form';
 
 import Container from 'react-bootstrap/Container';
@@ -17,7 +17,6 @@ import imgTerceiroLugar from './imagens/Morena.png';
 
 
 function Cards(props) {
-    
     var primeiro = "";
     var primeiro_colaboracoes = "";
     var primeiro_foto_perfil = "";
@@ -48,15 +47,39 @@ function Cards(props) {
         terceiro_colaboracoes = "0";
         terceiro_foto_perfil = imgTerceiroLugar;
     }else{
-        primeiro = props.usuarios[0].nome;
-        primeiro_colaboracoes = props.usuarios[0].quantidadeSinais;
-        primeiro_foto_perfil = props.usuarios[0].fotoPerfil;
-        segundo = props.usuarios[1].nome;
-        segundo_colaboracoes = props.usuarios[1].quantidadeSinais;
-        segundo_foto_perfil = props.usuarios[1].fotoPerfil;
-        terceiro = props.usuarios[2].nome;
-        terceiro_colaboracoes = props.usuarios[2].quantidadeSinais;
-        terceiro_foto_perfil = props.usuarios[2].fotoPerfil;
+        if(props.usuarios.length == 1){
+            primeiro = props.usuarios[0].nome;
+            primeiro_colaboracoes = props.usuarios[0].quantidadeSinais;
+            primeiro_foto_perfil = props.usuarios[0].fotoPerfil;
+            segundo = "e-sinais";
+            segundo_colaboracoes = "0";
+            segundo_foto_perfil = "esinais.png";
+            terceiro = "e-sinais";
+            terceiro_colaboracoes = "0";
+            terceiro_foto_perfil = "esinais.png";
+
+        }else if (props.usuarios.length == 2){
+            primeiro = props.usuarios[0].nome;
+            primeiro_colaboracoes = props.usuarios[0].quantidadeSinais;
+            primeiro_foto_perfil = props.usuarios[0].fotoPerfil;
+            segundo = props.usuarios[1].nome;
+            segundo_colaboracoes = props.usuarios[1].quantidadeSinais;
+            segundo_foto_perfil = props.usuarios[1].fotoPerfil;
+            terceiro = "e-sinais";
+            terceiro_colaboracoes = "0";
+            terceiro_foto_perfil = "esinais.png";           
+        }else{
+            primeiro = props.usuarios[0].nome;
+            primeiro_colaboracoes = props.usuarios[0].quantidadeSinais;
+            primeiro_foto_perfil = props.usuarios[0].fotoPerfil;
+            segundo = props.usuarios[1].nome;
+            segundo_colaboracoes = props.usuarios[1].quantidadeSinais;
+            segundo_foto_perfil = props.usuarios[1].fotoPerfil;
+            terceiro = props.usuarios[2].nome;
+            terceiro_colaboracoes = props.usuarios[2].quantidadeSinais;
+            terceiro_foto_perfil = props.usuarios[2].fotoPerfil;
+        }
+
         
     }
     return (
@@ -91,56 +114,22 @@ function Cards(props) {
             </Row>
             <Row>
                 <Col className="md-4 text-center">
-                    <img className="rounded-circle circulo centralizar" alt="logo" src={"http://localhost:8080/files/fotosPerfilUsuarios/" + primeiro_foto_perfil}/>
+                    <img className="rounded-circle circulo centralizar" alt="logo" src={api.defaults.baseURL+"/files/fotosPerfilUsuarios/" + primeiro_foto_perfil}/>
                     <h2 className="mt-4 mb-4">{primeiro}</h2>
                     <p>{primeiro_colaboracoes+ " "} colaborações</p>
                 </Col>
                 <Col className="md-4 text-center">
-                    <img className="rounded-circle circulo centralizar" alt="logo" src={"http://localhost:8080/files/fotosPerfilUsuarios/" + segundo_foto_perfil}/>
+                    <img className="rounded-circle circulo centralizar" alt="logo" src={api.defaults.baseURL+"/files/fotosPerfilUsuarios/" + segundo_foto_perfil}/>
                     <h2 className="mt-4 mb-4">{segundo}</h2>
                     <p>{segundo_colaboracoes+ " "} colaborações</p>    
                 </Col>
                 <Col className="md-4 text-center">
-                    <img className="rounded-circle circulo centralizar" alt="logo" src={"http://localhost:8080/files/fotosPerfilUsuarios/" + terceiro_foto_perfil}/>
+                    <img className="rounded-circle circulo centralizar" alt="logo" src={api.defaults.baseURL+"/files/fotosPerfilUsuarios/" + terceiro_foto_perfil}/>
                     <h2 className="mt-4 mb-4">{terceiro}</h2>
                     <p>{terceiro_colaboracoes+ " "} colaborações</p>
                 </Col>
             </Row>
-            {
-               /* <CardGroup>
-
-                <Card className="border border-white">
-                    <Card.Img variant="top" src={imgPrimeiroLugar} className="rounded-circle" />
-                    <Card.Body>
-                        <Card.Title className="text-center" >Fulano Beltrano</Card.Title>
-                        <Card.Text className="text-center">
-                            50 colaborações
-                        </Card.Text>
-                    </Card.Body>
-
-                </Card>
-                <Card className="border border-white">
-                    <Card.Img variant="top" src={imgSegundoLugar} className="rounded-circle" />
-                    <Card.Body>
-                        <Card.Title className="text-center">Ciclano Santos</Card.Title>
-                        <Card.Text className="text-center">
-                            20 colaborações
-                        </Card.Text>
-                    </Card.Body>
-
-                </Card>
-                <Card className="border border-white">
-                    <Card.Img variant="top" src={imgTerceiroLugar} className="rounded-circle" />
-                    <Card.Body>
-                        <Card.Title className="text-center">Beltrano Almeida</Card.Title>
-                        <Card.Text className="text-center">
-                            10 colaborações
-                        </Card.Text>
-                    </Card.Body>
-
-                </Card>
-            </CardGroup>*/
-            }
+            
         </Container>
     );
 }
